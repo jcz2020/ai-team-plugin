@@ -1,7 +1,6 @@
 ---
 name: task-dispatcher
 description: 当用户提出开发任务、功能需求、技术问题时自动触发。智能分析任务类型、复杂度,识别所需角色,调用合适的 subagent。支持 MCP 工具自动加载。
-version: 1.0.0
 ---
 
 # 任务智能路由技能
