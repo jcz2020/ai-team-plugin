@@ -1,0 +1,21 @@
+{
+  "name": "ai-team-marketplace",
+  "owner": {
+    "name": "Your Name",
+    "email": "your@email.com"
+  },
+  "metadata": {
+    "description": "AI 专业团队市场 - 对话式智能调度系统",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "ai-team",
+      "description": "AI 专业团队 - 通过对话式智能调度协调多个专业 subagent 协作开发",
+      "version": "1.0.0",
+      "source": "./plugins/ai-team",
+      "category": "development",
+      "tags": ["ai", "team", "collaboration", "mcp-control"]
+    }
+  ]
+}
