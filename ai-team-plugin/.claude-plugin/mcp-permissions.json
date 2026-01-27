@@ -1,0 +1,72 @@
+{
+  "version": "1.0.0",
+  "description": "MCP 工具权限配置 - 控制每个角色可以使用的 MCP 工具",
+  "roles": {
+    "product-manager": {
+      "required_mcps": [
+        {
+          "name": "playwright",
+          "purpose": "联网信息收集和市场调研",
+          "tools": ["browser_navigate", "browser_snapshot", "web_search"],
+          "fallback_behavior": "error",
+          "instructions": "必须使用浏览器 MCP 进行需求调研和技术调研"
+        }
+      ],
+      "optional_mcps": [
+        {
+          "name": "context7",
+          "purpose": "查询技术文档",
+          "tools": ["query-docs", "resolve-library-id"]
+        }
+      ],
+      "forbidden_mcps": ["filesystem-write"]
+    },
+    "ui-ux-designer": {
+      "required_mcps": [
+        {
+          "name": "mastergo-mcp",
+          "purpose": "UI 设计和原型制作",
+          "tools": ["create-design", "export-assets", "sync-design-tokens"],
+          "fallback_behavior": "error",
+          "instructions": "必须使用 MasterGo MCP 创建设计稿"
+        }
+      ],
+      "optional_mcps": [
+        {
+          "name": "4-5-v-mcp",
+          "purpose": "图像分析设计参考",
+          "tools": ["analyze_image"]
+        }
+      ],
+      "forbidden_mcps": []
+    },
+    "developer": {
+      "required_mcps": [],
+      "optional_mcps": [
+        {
+          "name": "context7",
+          "purpose": "查询框架文档",
+          "tools": ["query-docs"]
+        }
+      ],
+      "forbidden_mcps": []
+    },
+    "security-expert": {
+      "required_mcps": [
+        {
+          "name": "security-scanner",
+          "purpose": "安全漏洞扫描",
+          "tools": ["scan-dependencies", "scan-code"],
+          "fallback_behavior": "warning"
+        }
+      ],
+      "optional_mcps": [],
+      "forbidden_mcps": []
+    }
+  },
+  "global_settings": {
+    "strict_mode": true,
+    "fallback_behavior": "warning",
+    "audit_log": true
+  }
+}
