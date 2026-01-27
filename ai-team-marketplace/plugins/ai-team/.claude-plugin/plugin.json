@@ -1,0 +1,8 @@
+{
+  "name": "ai-team",
+  "description": "AI 专业团队 - 通过对话式智能调度协调多个专业 subagent 协作开发",
+  "author": {
+    "name": "Your Name",
+    "email": "your@email.com"
+  }
+}
