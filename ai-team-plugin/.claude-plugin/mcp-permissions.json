@@ -49,7 +49,7 @@
           "tools": ["query-docs"]
         }
       ],
-      "forbidden_mcps": []
+      "forbidden_mcps": ["filesystem-write"]
     },
     "security-expert": {
       "required_mcps": [
