@@ -1,0 +1,14 @@
+{
+  "name": "ai-team",
+  "version": "1.0.0",
+  "description": "AI 专业团队 - 对话式智能调度系统，支持 MCP 工具控制和任务跟踪",
+  "author": {
+    "name": "Your Name",
+    "email": "your@email.com"
+  },
+  "capabilities": {
+    "commands": true,
+    "skills": true,
+    "agents": true
+  }
+}
