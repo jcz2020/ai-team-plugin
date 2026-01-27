@@ -1,8 +1,6 @@
 ---
 description: 分配任务给特定角色
-argument-hint: <角色名称> <任务描述>
 allowed-tools: [Task, Read, Glob]
-model: sonnet
 ---
 
 # 分配任务给角色

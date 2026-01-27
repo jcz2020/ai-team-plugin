@@ -1,8 +1,6 @@
 ---
 description: 启动 AI 团队协作完成复杂任务
-argument-hint: <任务描述>
 allowed-tools: [Task, Read, Write, Edit, Bash, TodoWrite, AskUserQuestion]
-model: sonnet
 ---
 
 # AI 团队协作命令
