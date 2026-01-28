@@ -9,201 +9,177 @@
 
 ### 🎖️ Overview
 
-**AI Team Plugin** is a powerful Claude Code plugin that orchestrates multiple specialized subagents through conversational intelligent dispatch. It provides a complete AI team with 11 professional roles, MCP tool permission control, automated testing, and code review capabilities.
+**AI Team Plugin** is a powerful Claude Code plugin that orchestrates multiple specialized subagents through conversational intelligent dispatch. It provides a complete AI development team with 11 professional roles, advanced MCP tool permission control, automated testing, and two-stage code review.
 
 ### ✨ Key Features
 
-#### 1. 🤖 Conversational Intelligent Dispatch
+#### 🤖 Conversational Intelligent Dispatch
+- Describe tasks in natural language
+- Automatically analyzes complexity and routes to appropriate roles
+- Supports simple, medium, and complex task workflows
 
-**Natural Language Interaction**:
-- No need to memorize complex commands
-- Automatically determines task complexity
-- Dynamically assigns appropriate professional roles
+#### 👥 11 Professional AI Roles
+- **Product Manager** - Requirements analysis and task breakdown
+- **Architect** - System design and technology selection
+- **Developer** - Code implementation with TDD
+- **QA Engineer** - Automated testing strategies
+- **Code Reviewer** - Two-stage review (compliance → quality)
+- **UI/UX Designer** - Interface design with MasterGo MCP
+- **Frontend Expert** - Frontend development and optimization
+- **Backend Expert** - Backend architecture and APIs
+- **Database Expert** - Database modeling and optimization
+- **Security Expert** - Security auditing and vulnerability scanning
+- **DevOps Engineer** - CI/CD and deployment automation
 
-**Smart Routing**:
-- **Simple Tasks**: Single role completes quickly
-- **Medium Tasks**: 2-3 roles collaborate
-- **Complex Tasks**: Full team collaboration (11 roles)
+#### 🔐 Advanced MCP Permission Control
+- **Three-tier system**: Required, Optional, and Forbidden MCPs
+- **Enforced workflows**: Product Manager must use browser for research, UI/UX Designer must use MasterGo for designs
+- **Role-based isolation**: Each role has independent tool permissions
 
-#### 2. 👥 11 Professional Roles
-
-**Core Roles**:
-- **Product Manager** - Requirements analysis, task breakdown
-- **Architect** - System design, technology selection
-- **Developer** - Code implementation, TDD
-
-**Quality Assurance**:
-- **QA Engineer** - Automated testing
-- **Code Reviewer** - Two-stage review (spec → quality)
-
-**Specialized Domains**:
-- **UI/UX Designer** - Interface design
-- **Frontend Expert** - Frontend development
-- **Backend Expert** - Backend development
-- **Database Expert** - Database optimization
-- **Security Expert** - Security auditing
-- **DevOps Engineer** - CI/CD, deployment
-
-#### 3. 🔐 MCP Tool Permission Control
-
-**Three-Tier Permission System**:
-- **Required MCPs** (required_mcps): Tools that roles must use
-- **Optional MCPs** (optional_mcps): Tools available but not mandatory
-- **Forbidden MCPs** (forbidden_mcps): Tools strictly prohibited for roles
-
-**Enforced Key Processes**:
-- Product Manager MUST use browser for market research
-- UI/UX Designer MUST use MasterGo for design creation
-- Security Expert MUST use security scanning tools
-
-#### 4. 🛡️ Three-Layer Protection Mechanism
-
-**Permission Layer**:
-- MCP tool access control
-- Role permission isolation
-- Global security rules
-
-**Review Layer**:
-- Two-stage code review (compliance → quality)
-- Automated code quality checks
-- Security vulnerability scanning
-
-**Test Layer**:
-- Unit test coverage
-- Integration testing
-- E2E test scenarios
-
-#### 5. 🔄 Automation Tools
-
-**Git Hooks**:
-- Pre-commit: Code quality checks
-- Commit-msg: Commit convention validation
-- Pre-push: Test execution
-
-**Beads Integration**:
-- Automatic task recording
-- Decision history tracking
-- Git synchronization
-
-**Validation Scripts**:
-- Plugin structure validation
-- MCP permission configuration validation
-- One-click testing
+#### 🛡️ Quality Assurance
+- Three-layer protection: Permission → Review → Test
+- Two-stage code review: Specification compliance → Code quality
+- Git Hooks automation: Pre-commit, commit-msg, and pre-push checks
+- Beads integration: Automatic task tracking and decision history
 
 ---
 
 ### 📦 Installation
 
-#### Method 1: Marketplace Installation (Recommended)
+#### Quick Install (Recommended)
+
+1. **Add the Marketplace**:
+   ```bash
+   /plugin marketplace add jcz2020/ai-team-plugin
+   ```
+
+2. **Install the Plugin**:
+   ```bash
+   /plugin install ai-team@jcz2020/ai-team-plugin
+   ```
+
+3. **Verify Installation**:
+   ```bash
+   /ai-team --help
+   ```
+
+#### Alternative: Install from Local Directory
+
+If you have cloned this repository:
 
 ```bash
-# Add Marketplace
-/plugin marketplace add /root/dev/set_claude/ai-team-marketplace
+# Navigate to the marketplace directory
+cd /path/to/ai-team-marketplace
 
-# Install Plugin
+# Add from local path
+/plugin marketplace add .
+
+# Install the plugin
 /plugin install ai-team
-```
-
-#### Method 2: Manual Installation
-
-```bash
-# Copy plugin directory
-cp -r /root/dev/set_claude/ai-team-marketplace/plugins/ai-team \
-      ~/.claude/plugins/
-
-# Enable in settings.json
-```
-
-#### Verify Installation
-
-```bash
-# Test command recognition
-/ai-team --help
-/assign product-manager test task
 ```
 
 ---
 
-### 🚀 Usage Guide
+### 🚀 Usage
 
-#### Basic Commands
+#### Start AI Team Collaboration
 
-**Start AI Team Collaboration**:
 ```bash
-/ai-team develop user permission management feature
+/ai-team develop a blog system from scratch
 ```
 
-**Assign Task to Specific Role**:
+The system will:
+1. Analyze task complexity (simple/medium/complex)
+2. Dispatch appropriate professional roles
+3. Execute workflow through required stages
+4. Perform two-stage code review
+5. Deliver complete code and documentation
+
+#### Assign Specific Role
+
 ```bash
-/assign developer fix login page style issue
-/assign product-manager research market competition
-/assign ui-ux-designer design user login page
+# Product Manager for market research
+/assign product-manager research AI market trends
+
+# UI/UX Designer for interface design
+/assign ui-ux-designer design a modern login page
+
+# Developer for bug fixes
+/assign developer fix navigation menu issue
 ```
 
-#### Workflow
+#### Workflow Examples
 
-1. **User Input Requirement** - Describe in natural language
-2. **Smart Routing** - Automatically analyze task complexity
-3. **Role Collaboration** - Multiple professional roles collaborate sequentially
-4. **Quality Check** - Two-stage review ensures quality
-5. **Result Delivery** - Complete code and documentation
+**Simple Task** (Single Role):
+```bash
+/assign developer fix typo in header
+```
+
+**Medium Task** (2-3 Roles):
+```bash
+/ai-team add user authentication feature
+```
+
+**Complex Task** (Full Team):
+```bash
+/ai-team build a complete e-commerce platform
+```
 
 ---
 
 ### 📊 Quality Metrics
 
-**Quality Score**: ⭐⭐⭐⭐☆ 4.3/5.0
+| Dimension | Score | Description |
+|-----------|-------|-------------|
+| Feature Completeness | ⭐⭐⭐⭐⭐ 5/5 | All 11 roles implemented |
+| Configuration | ⭐⭐⭐⭐⭐ 5/5 | 100% validation passed |
+| Documentation | ⭐⭐⭐⭐⭐ 5/5 | Comprehensive guides |
+| Code Quality | ⭐⭐⭐⭐☆ 4/5 | Follows best practices |
+| Architecture | ⭐⭐⭐⭐☆ 4/5 | Clean design |
 
-| Dimension | Score |
-|-----------|-------|
-| Feature Completeness | ⭐⭐⭐⭐⭐ 5/5 |
-| Configuration Correctness | ⭐⭐⭐⭐⭐ 5/5 |
-| Documentation Quality | ⭐⭐⭐⭐⭐ 5/5 |
-| Code Standards | ⭐⭐⭐⭐☆ 4/5 |
-| Architecture Design | ⭐⭐⭐⭐☆ 4/5 |
+**Overall**: ⭐⭐⭐⭐☆ **4.3/5.0**
 
-**Test Coverage**:
-- Automated Validation: 96.9% (31/32 checks passed)
-- Role Definitions: 11/11 (100%)
-- MCP Configuration: 11/11 (100%)
-- Documentation Completeness: 13/13 (100%)
+**Test Coverage**: 96.9% (31/32 automated checks passed)
 
 ---
 
 ### 📝 Documentation
 
-- [README.md](./README.md) - Project Overview
-- [INSTALLATION_TEST.md](./plugins/ai-team/docs/INSTALLATION_TEST.md) - Installation Guide
-- [E2E_TEST_SCENARIOS.md](./tests/e2e-test-scenarios.md) - Test Scenarios
-- [MCP_PERMISSIONS.md](./plugins/ai-team/docs/MCP_PERMISSIONS.md) - MCP Permission Guide
-- [GIT_HOOKS_IMPLEMENTATION.md](./plugins/ai-team/docs/GIT_HOOKS_IMPLEMENTATION.md) - Git Hooks Implementation
-- [BEADS_INTEGRATION.md](./plugins/ai-team/docs/BEADS_INTEGRATION.md) - Beads Integration Guide
-- [architecture.md](./plugins/ai-team/docs/architecture.md) - Architecture Design
+- [Installation Guide](https://github.com/jcz2020/ai-team-plugin/blob/main/docs/INSTALLATION_TEST.md)
+- [MCP Permission System](https://github.com/jcz2020/ai-team-plugin/blob/main/docs/MCP_PERMISSIONS.md)
+- [E2E Test Scenarios](https://github.com/jcz2020/ai-team-plugin/blob/main/tests/e2e-test-scenarios.md)
+- [Git Hooks Implementation](https://github.com/jcz2020/ai-team-plugin/blob/main/docs/GIT_HOOKS_IMPLEMENTATION.md)
 
 ---
 
 ### 🗺️ Roadmap
 
 #### v1.0.1 (Planned)
-- Refactor ai-team.md into modular structure
-- Optimize file line standards
+- Refactor command structure
 - Add more test cases
+- Performance optimizations
 
 #### v1.1.0 (Future)
-- Support custom roles
-- Expand more MCP tools
-- Performance optimization
+- Custom role support
+- Expanded MCP tool integrations
+- Visual management interface
 
 #### v2.0.0 (Long-term)
 - Multi-language support
-- Visual management interface
 - Team collaboration features
+- Cloud sync capabilities
+
+---
+
+### 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit issues or pull requests.
 
 ---
 
 ### 📄 License
 
-MIT License
+MIT License - see LICENSE file for details
 
 ---
 
@@ -219,201 +195,177 @@ MIT License
 
 ### 🎖️ 概述
 
-**AI Team Plugin** 是一个强大的 Claude Code 插件，通过对话式智能调度协调多个专业 subagent 协作开发。它提供了完整的 AI 团队，包含 11 个专业角色、MCP 工具权限控制、自动化测试和代码审查功能。
+**AI Team Plugin** 是一个强大的 Claude Code 插件，通过对话式智能调度协调多个专业 subagent 协作开发。它提供完整的 AI 开发团队，包含 11 个专业角色、先进的 MCP 工具权限控制、自动化测试和双阶段代码审查。
 
 ### ✨ 核心特性
 
-#### 1. 🤖 对话式智能调度
+#### 🤖 对话式智能调度
+- 使用自然语言描述任务
+- 自动分析复杂度并路由到合适的角色
+- 支持简单、中等、复杂任务工作流
 
-**自然语言交互**：
-- 无需记忆复杂命令
-- 自动判断任务复杂度
-- 动态分配合适的专业角色
-
-**智能路由**：
-- **简单任务**：单个角色快速完成
-- **中等任务**：2-3 个角色协作
-- **复杂任务**：完整团队协作（11 个角色）
-
-#### 2. 👥 11 个专业角色
-
-**核心角色**：
-- **Product Manager**（产品经理）- 需求分析、任务分解
-- **Architect**（架构师）- 系统设计、技术选型
-- **Developer**（开发工程师）- 代码实现、TDD
-
-**质量保障**：
-- **QA Engineer**（测试工程师）- 自动化测试
+#### 👥 11 个专业 AI 角色
+- **Product Manager**（产品经理）- 需求分析与任务分解
+- **Architect**（架构师）- 系统设计和技术选型
+- **Developer**（开发工程师）- 使用 TDD 进行代码实现
+- **QA Engineer**（测试工程师）- 自动化测试策略
 - **Code Reviewer**（代码审查员）- 双阶段审查（规范 → 质量）
+- **UI/UX Designer**（UI/UX 设计师）- 使用 MasterGo MCP 进行界面设计
+- **Frontend Expert**（前端专家）- 前端开发和性能优化
+- **Backend Expert**（后端专家）- 后端架构和 API 设计
+- **Database Expert**（数据库专家）- 数据库建模和性能优化
+- **Security Expert**（安全专家）- 安全审计和漏洞扫描
+- **DevOps Engineer**（DevOps 工程师）- CI/CD 和部署自动化
 
-**专业领域**：
-- **UI/UX Designer**（UI/UX 设计师）- 界面设计
-- **Frontend Expert**（前端专家）- 前端开发
-- **Backend Expert**（后端专家）- 后端开发
-- **Database Expert**（数据库专家）- 数据库优化
-- **Security Expert**（安全专家）- 安全审计
-- **DevOps Engineer**（DevOps 工程师）- CI/CD、部署
+#### 🔐 先进的 MCP 权限控制
+- **三级系统**：必需、可选、禁止 MCP 工具
+- **强制工作流**：产品经理必须使用浏览器调研，UI/UX 设计师必须使用 MasterGo 设计
+- **基于角色的隔离**：每个角色拥有独立的工具权限
 
-#### 3. 🔐 MCP 工具权限控制
-
-**三级权限控制**：
-- **必需 MCP**（required_mcps）：角色必须使用的工具
-- **可选 MCP**（optional_mcps）：角色可以使用但非强制的工具
-- **禁止 MCP**（forbidden_mcps）：角色严格禁止使用的工具
-
-**强制关键流程**：
-- Product Manager 必须使用浏览器进行市场调研
-- UI/UX Designer 必须使用 MasterGo 创建设计稿
-- Security Expert 必须使用安全扫描工具
-
-#### 4. 🛡️ 三层防护机制
-
-**权限层**：
-- MCP 工具访问控制
-- 角色权限隔离
-- 全局安全规则
-
-**审查层**：
-- 双阶段代码审查（规范 → 质量）
-- 自动化代码质量检查
-- 安全漏洞扫描
-
-**测试层**：
-- 单元测试覆盖
-- 集成测试
-- E2E 测试场景
-
-#### 5. 🔄 自动化工具
-
-**Git Hooks**：
-- Pre-commit: 代码质量检查
-- Commit-msg: 提交规范验证
-- Pre-push: 测试执行
-
-**Beads 集成**：
-- 任务自动记录
-- 决策历史追踪
-- Git 同步
-
-**验证脚本**：
-- 插件结构验证
-- MCP 权限配置验证
-- 一键测试
+#### 🛡️ 质量保障
+- 三层防护：权限 → 审查 → 测试
+- 双阶段代码审查：规范合规性 → 代码质量
+- Git Hooks 自动化：Pre-commit、commit-msg 和 pre-push 检查
+- Beads 集成：自动任务跟踪和决策历史
 
 ---
 
 ### 📦 安装
 
-#### 方法 1：Marketplace 安装（推荐）
+#### 快速安装（推荐）
+
+1. **添加市场**：
+   ```bash
+   /plugin marketplace add jcz2020/ai-team-plugin
+   ```
+
+2. **安装插件**：
+   ```bash
+   /plugin install ai-team@jcz2020/ai-team-plugin
+   ```
+
+3. **验证安装**：
+   ```bash
+   /ai-team --help
+   ```
+
+#### 备选方案：从本地目录安装
+
+如果您已克隆此仓库：
 
 ```bash
-# 添加 Marketplace
-/plugin marketplace add /root/dev/set_claude/ai-team-marketplace
+# 进入市场目录
+cd /path/to/ai-team-marketplace
+
+# 从本地路径添加
+/plugin marketplace add .
 
 # 安装插件
 /plugin install ai-team
 ```
 
-#### 方法 2：手动安装
-
-```bash
-# 复制插件目录
-cp -r /root/dev/set_claude/ai-team-marketplace/plugins/ai-team \
-      ~/.claude/plugins/
-
-# 在 settings.json 中启用
-```
-
-#### 验证安装
-
-```bash
-# 测试命令识别
-/ai-team --help
-/assign product-manager 测试任务
-```
-
 ---
 
-### 🚀 使用指南
+### 🚀 使用方法
 
-#### 基础命令
+#### 启动 AI 团队协作
 
-**启动 AI 团队协作**：
 ```bash
-/ai-team 开发用户权限管理功能
+/ai-team 从零开发一个博客系统
 ```
 
-**分配任务给特定角色**：
+系统将：
+1. 分析任务复杂度（简单/中等/复杂）
+2. 分配合适的专业角色
+3. 通过必需阶段执行工作流
+4. 执行双阶段代码审查
+5. 交付完整代码和文档
+
+#### 分配特定角色
+
 ```bash
-/assign developer 修复登录页面的样式问题
-/assign product-manager 调研市场竞争情况
-/assign ui-ux-designer 设计用户登录页面
+# 产品经理进行市场调研
+/assign product-manager 调研 AI 市场趋势
+
+# UI/UX 设计师设计界面
+/assign ui-ux-designer 设计一个现代化的登录页面
+
+# 开发工程师修复 Bug
+/assign developer 修复导航菜单问题
 ```
 
-#### 工作流程
+#### 工作流示例
 
-1. **用户输入需求** - 使用自然语言描述
-2. **智能路由判断** - 自动分析任务复杂度
-3. **角色协作执行** - 多个专业角色按序协作
-4. **质量检查** - 双阶段审查确保质量
-5. **结果交付** - 完整的代码和文档
+**简单任务**（单个角色）：
+```bash
+/assign developer 修复页眉错别字
+```
+
+**中等任务**（2-3 个角色）：
+```bash
+/ai-team 添加用户认证功能
+```
+
+**复杂任务**（完整团队）：
+```bash
+/ai-team 构建完整的电商平台
+```
 
 ---
 
 ### 📊 质量指标
 
-**综合评分**：⭐⭐⭐⭐☆ 4.3/5.0
+| 维度 | 评分 | 说明 |
+|------|------|------|
+| 功能完整性 | ⭐⭐⭐⭐⭐ 5/5 | 所有 11 个角色已实现 |
+| 配置正确性 | ⭐⭐⭐⭐⭐ 5/5 | 100% 验证通过 |
+| 文档完整性 | ⭐⭐⭐⭐⭐ 5/5 | 全面的指南文档 |
+| 代码质量 | ⭐⭐⭐⭐☆ 4/5 | 遵循最佳实践 |
+| 架构设计 | ⭐⭐⭐⭐☆ 4/5 | 清晰的设计 |
 
-| 维度 | 评分 |
-|------|------|
-| 功能完整性 | ⭐⭐⭐⭐⭐ 5/5 |
-| 配置正确性 | ⭐⭐⭐⭐⭐ 5/5 |
-| 文档质量 | ⭐⭐⭐⭐⭐ 5/5 |
-| 代码规范 | ⭐⭐⭐⭐☆ 4/5 |
-| 架构设计 | ⭐⭐⭐⭐☆ 4/5 |
+**综合评分**: ⭐⭐⭐⭐☆ **4.3/5.0**
 
-**测试覆盖**：
-- 自动化验证：96.9% (31/32 检查通过)
-- 角色定义：11/11 (100%)
-- MCP 配置：11/11 (100%)
-- 文档完整性：13/13 (100%)
+**测试覆盖率**: 96.9% (31/32 自动化检查通过)
 
 ---
 
 ### 📝 文档
 
-- [README.md](./README.md) - 项目概述
-- [INSTALLATION_TEST.md](./plugins/ai-team/docs/INSTALLATION_TEST.md) - 安装指南
-- [E2E_TEST_SCENARIOS.md](./tests/e2e-test-scenarios.md) - 测试场景
-- [MCP_PERMISSIONS.md](./plugins/ai-team/docs/MCP_PERMISSIONS.md) - MCP 权限说明
-- [GIT_HOOKS_IMPLEMENTATION.md](./plugins/ai-team/docs/GIT_HOOKS_IMPLEMENTATION.md) - Git Hooks 实施报告
-- [BEADS_INTEGRATION.md](./plugins/ai-team/docs/BEADS_INTEGRATION.md) - Beads 集成指南
-- [architecture.md](./plugins/ai-team/docs/architecture.md) - 架构设计
+- [安装指南](https://github.com/jcz2020/ai-team-plugin/blob/main/docs/INSTALLATION_TEST.md)
+- [MCP 权限系统](https://github.com/jcz2020/ai-team-plugin/blob/main/docs/MCP_PERMISSIONS.md)
+- [E2E 测试场景](https://github.com/jcz2020/ai-team-plugin/blob/main/tests/e2e-test-scenarios.md)
+- [Git Hooks 实施](https://github.com/jcz2020/ai-team-plugin/blob/main/docs/GIT_HOOKS_IMPLEMENTATION.md)
 
 ---
 
 ### 🗺️ 路线图
 
 #### v1.0.1（计划中）
-- 拆分 ai-team.md 为模块化结构
-- 优化文件行数规范
+- 重构命令结构
 - 添加更多测试用例
+- 性能优化
 
 #### v1.1.0（未来）
 - 支持自定义角色
-- 扩展更多 MCP 工具
-- 性能优化
+- 扩展更多 MCP 工具集成
+- 可视化管理界面
 
 #### v2.0.0（长期）
 - 多语言支持
-- 可视化管理界面
 - 团队协作功能
+- 云同步能力
+
+---
+
+### 🤝 贡献
+
+欢迎贡献！请随时提交 Issue 或 Pull Request。
 
 ---
 
 ### 📄 许可证
 
-MIT License
+MIT License - 详见 LICENSE 文件
 
 ---
 
@@ -424,21 +376,23 @@ MIT License
 
 ---
 
-## 🎉 Quick Start
+## 🎉 Quick Start / 快速开始
 
 ```bash
-# 1. Install
-/plugin marketplace add /root/dev/set_claude/ai-team-marketplace
-/plugin install ai-team
+# 1. Add Marketplace / 添加市场
+/plugin marketplace add jcz2020/ai-team-plugin
 
-# 2. Use
+# 2. Install Plugin / 安装插件
+/plugin install ai-team@jcz2020/ai-team-plugin
+
+# 3. Use / 使用
 /ai-team develop a blog system
 
-# 3. Enjoy! 🚀
+# 4. Enjoy! / 开始使用吧！🚀
 ```
 
 ---
 
-**Version**: v1.0.0
-**Status**: ✅ Production Ready
-**Maintainer**: AI Team System
+**Version / 版本**: v1.0.0
+**Status / 状态**: ✅ Production Ready / 生产就绪
+**Quality Score / 质量评分**: ⭐⭐⭐⭐☆ 4.3/5.0
