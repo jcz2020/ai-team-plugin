@@ -78,6 +78,15 @@ cd /path/to/ai-team-marketplace
 /plugin install ai-team
 ```
 
+#### ⚠️ Command Format
+
+**Important**: Commands use the format `marketplace:plugin:command`
+
+- **Main command**: `ai-team:ai-team` (not `/ai-team`)
+- **Assign command**: `ai-team:assign` (not `/assign`)
+
+This is the standard Claude Code plugin command format.
+
 ---
 
 ### 🚀 Usage
@@ -85,7 +94,7 @@ cd /path/to/ai-team-marketplace
 #### Start AI Team Collaboration
 
 ```bash
-/ai-team develop a blog system from scratch
+ai-team:ai-team develop a blog system from scratch
 ```
 
 The system will:
@@ -99,20 +108,20 @@ The system will:
 
 ```bash
 # Product Manager for market research
-/assign product-manager research AI market trends
+ai-team:assign product-manager research AI market trends
 
 # UI/UX Designer for interface design
-/assign ui-ux-designer design a modern login page
+ai-team:assign ui-ux-designer design a modern login page
 
 # Developer for bug fixes
-/assign developer fix navigation menu issue
+ai-team:assign developer fix navigation menu issue
 ```
 
 #### Workflow Examples
 
 **Simple Task** (Single Role):
 ```bash
-/assign developer fix typo in header
+ai-team:assign developer fix typo in header
 ```
 
 **Medium Task** (2-3 Roles):
@@ -264,6 +273,15 @@ cd /path/to/ai-team-marketplace
 /plugin install ai-team
 ```
 
+#### ⚠️ 命令格式
+
+**重要提示**：命令使用格式为 `marketplace:plugin:command`
+
+- **主命令**：`ai-team:ai-team`（不是 `/ai-team`）
+- **分配命令**：`ai-team:assign`（不是 `/assign`）
+
+这是 Claude Code 插件的标准命令格式。
+
 ---
 
 ### 🚀 使用方法
@@ -285,20 +303,20 @@ cd /path/to/ai-team-marketplace
 
 ```bash
 # 产品经理进行市场调研
-/assign product-manager 调研 AI 市场趋势
+ai-team:assign product-manager 调研 AI 市场趋势
 
 # UI/UX 设计师设计界面
-/assign ui-ux-designer 设计一个现代化的登录页面
+ai-team:assign ui-ux-designer 设计一个现代化的登录页面
 
 # 开发工程师修复 Bug
-/assign developer 修复导航菜单问题
+ai-team:assign developer 修复导航菜单问题
 ```
 
 #### 工作流示例
 
 **简单任务**（单个角色）：
 ```bash
-/assign developer 修复页眉错别字
+ai-team:assign developer 修复页眉错别字
 ```
 
 **中等任务**（2-3 个角色）：
@@ -386,7 +404,7 @@ MIT License - 详见 LICENSE 文件
 /plugin install ai-team@jcz2020/ai-team-plugin
 
 # 3. Use / 使用
-/ai-team develop a blog system
+ai-team:ai-team develop a blog system
 
 # 4. Enjoy! / 开始使用吧！🚀
 ```
