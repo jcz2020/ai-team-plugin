@@ -1,0 +1,19 @@
+{
+  "name": "ai-team-marketplace",
+  "owner": {
+    "name": "jcz2020",
+    "email": "jcz2020@users.noreply.github.com"
+  },
+  "version": "1.0.0",
+  "description": "AI 专业团队插件市场 - 对话式智能调度系统",
+  "plugins": [
+    {
+      "name": "ai-team",
+      "description": "AI 专业团队 - 通过对话式智能调度协调多个专业 subagent 协作开发",
+      "version": "1.0.0",
+      "source": "./plugins/ai-team",
+      "category": "development",
+      "tags": ["ai", "team", "collaboration", "mcp-control"]
+    }
+  ]
+}

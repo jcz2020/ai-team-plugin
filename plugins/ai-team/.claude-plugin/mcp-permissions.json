@@ -1,0 +1,394 @@
+{
+  "$schema": "./mcp-permissions-schema.json",
+  "version": "1.0.0",
+  "description": "MCP 工具权限配置 - 控制每个角色可以使用的 MCP 工具",
+  "last_updated": "2026-01-28",
+  "roles": {
+    "product-manager": {
+      "display_name": "产品经理",
+      "required_mcps": [
+        {
+          "name": "playwright",
+          "purpose": "联网信息收集和市场调研",
+          "tools": [
+            "browser_navigate",
+            "browser_snapshot",
+            "browser_click",
+            "browser_type",
+            "browser_take_screenshot"
+          ],
+          "fallback_behavior": "error",
+          "instructions": "必须使用浏览器 MCP 进行需求调研和技术调研，不能凭空猜测"
+        }
+      ],
+      "optional_mcps": [
+        {
+          "name": "context7",
+          "purpose": "查询技术文档和最佳实践",
+          "tools": ["query-docs", "resolve-library-id"]
+        },
+        {
+          "name": "web-search-prime",
+          "purpose": "快速搜索市场信息和竞品分析",
+          "tools": ["webSearchPrime"]
+        },
+        {
+          "name": "web-reader",
+          "purpose": "读取网页内容进行深度分析",
+          "tools": ["webReader"]
+        }
+      ],
+      "forbidden_mcps": ["filesystem-write", "git-push"],
+      "notes": "产品经理专注于需求分析，不应直接修改代码或推送代码"
+    },
+    "architect": {
+      "display_name": "架构师",
+      "required_mcps": [],
+      "optional_mcps": [
+        {
+          "name": "context7",
+          "purpose": "查询技术框架文档和架构模式",
+          "tools": ["query-docs", "resolve-library-id"]
+        },
+        {
+          "name": "web-search-prime",
+          "purpose": "研究技术选型和架构方案",
+          "tools": ["webSearchPrime"]
+        },
+        {
+          "name": "web-reader",
+          "purpose": "读取技术博客和架构案例",
+          "tools": ["webReader"]
+        }
+      ],
+      "forbidden_mcps": ["filesystem-write", "git-push"],
+      "notes": "架构师专注于设计，不应直接修改代码"
+    },
+    "developer": {
+      "display_name": "开发工程师",
+      "required_mcps": [],
+      "optional_mcps": [
+        {
+          "name": "context7",
+          "purpose": "查询框架文档和 API 参考",
+          "tools": ["query-docs", "resolve-library-id"]
+        },
+        {
+          "name": "web-search-prime",
+          "purpose": "搜索解决方案和最佳实践",
+          "tools": ["webSearchPrime"]
+        }
+      ],
+      "forbidden_mcps": ["git-push"],
+      "notes": "开发工程师可以读写代码，但不能直接推送到主分支"
+    },
+    "ui-ux-designer": {
+      "display_name": "UI/UX 设计师",
+      "required_mcps": [
+        {
+          "name": "mastergo-mcp",
+          "purpose": "UI 设计和原型制作",
+          "tools": [
+            "getDsl",
+            "getComponentLink",
+            "getComponentGenerator",
+            "getMeta"
+          ],
+          "fallback_behavior": "error",
+          "instructions": "必须使用 MasterGo MCP 创建设计稿"
+        }
+      ],
+      "optional_mcps": [
+        {
+          "name": "4-5-v-mcp",
+          "purpose": "图像分析和设计参考",
+          "tools": ["analyze_image"]
+        },
+        {
+          "name": "playwright",
+          "purpose": "查看设计参考网站",
+          "tools": ["browser_navigate", "browser_snapshot", "browser_take_screenshot"]
+        },
+        {
+          "name": "web-search-prime",
+          "purpose": "搜索设计灵感和最佳实践",
+          "tools": ["webSearchPrime"]
+        },
+        {
+          "name": "zai-mcp-server",
+          "purpose": "UI 设计分析和转换",
+          "tools": ["ui_to_artifact", "analyze_image"]
+        }
+      ],
+      "forbidden_mcps": ["filesystem-write", "git-push"],
+      "notes": "设计师专注于设计交付，不应修改代码"
+    },
+    "qa-engineer": {
+      "display_name": "测试工程师",
+      "required_mcps": [
+        {
+          "name": "playwright",
+          "purpose": "UI 自动化测试",
+          "tools": [
+            "browser_navigate",
+            "browser_snapshot",
+            "browser_click",
+            "browser_type",
+            "browser_take_screenshot",
+            "browser_fill_form",
+            "browser_wait_for",
+            "browser_select_option",
+            "browser_console_messages"
+          ],
+          "fallback_behavior": "warning"
+        }
+      ],
+      "optional_mcps": [
+        {
+          "name": "context7",
+          "purpose": "查询测试框架文档",
+          "tools": ["query-docs"]
+        },
+        {
+          "name": "web-search-prime",
+          "purpose": "搜索测试最佳实践",
+          "tools": ["webSearchPrime"]
+        }
+      ],
+      "forbidden_mcps": ["git-push"],
+      "notes": "测试工程师可以编写测试代码，但不能推送生产代码"
+    },
+    "code-reviewer": {
+      "display_name": "代码审查员",
+      "required_mcps": [],
+      "optional_mcps": [
+        {
+          "name": "security-scanner",
+          "purpose": "安全漏洞扫描",
+          "tools": ["scan-dependencies", "scan-code"]
+        },
+        {
+          "name": "context7",
+          "purpose": "查询代码规范和最佳实践",
+          "tools": ["query-docs"]
+        },
+        {
+          "name": "web-search-prime",
+          "purpose": "搜索代码审查标准",
+          "tools": ["webSearchPrime"]
+        },
+        {
+          "name": "zread",
+          "purpose": "读取 GitHub 仓库代码进行审查",
+          "tools": ["get_repo_structure", "read_file", "search_doc"]
+        }
+      ],
+      "forbidden_mcps": ["filesystem-write", "git-push"],
+      "notes": "代码审查员只读代码，不应直接修改或推送"
+    },
+    "frontend-expert": {
+      "display_name": "前端专家",
+      "required_mcps": [],
+      "optional_mcps": [
+        {
+          "name": "context7",
+          "purpose": "查询前端框架文档",
+          "tools": ["query-docs", "resolve-library-id"]
+        },
+        {
+          "name": "web-search-prime",
+          "purpose": "研究前端技术和性能优化方案",
+          "tools": ["webSearchPrime"]
+        },
+        {
+          "name": "playwright",
+          "purpose": "测试前端交互",
+          "tools": ["browser_navigate", "browser_snapshot", "browser_take_screenshot"]
+        },
+        {
+          "name": "web-reader",
+          "purpose": "阅读前端技术文章",
+          "tools": ["webReader"]
+        }
+      ],
+      "forbidden_mcps": ["git-push"],
+      "notes": "前端专家可以编写前端代码，但不能直接推送"
+    },
+    "backend-expert": {
+      "display_name": "后端专家",
+      "required_mcps": [],
+      "optional_mcps": [
+        {
+          "name": "context7",
+          "purpose": "查询后端框架文档",
+          "tools": ["query-docs", "resolve-library-id"]
+        },
+        {
+          "name": "web-search-prime",
+          "purpose": "研究后端技术和性能优化",
+          "tools": ["webSearchPrime"]
+        },
+        {
+          "name": "web-reader",
+          "purpose": "阅读后端技术文章",
+          "tools": ["webReader"]
+        }
+      ],
+      "forbidden_mcps": ["git-push"],
+      "notes": "后端专家可以编写后端代码，但不能直接推送"
+    },
+    "database-expert": {
+      "display_name": "数据库专家",
+      "required_mcps": [],
+      "optional_mcps": [
+        {
+          "name": "context7",
+          "purpose": "查询数据库文档",
+          "tools": ["query-docs"]
+        },
+        {
+          "name": "web-search-prime",
+          "purpose": "研究数据库优化方案",
+          "tools": ["webSearchPrime"]
+        },
+        {
+          "name": "web-reader",
+          "purpose": "阅读数据库优化案例",
+          "tools": ["webReader"]
+        }
+      ],
+      "forbidden_mcps": ["git-push"],
+      "notes": "数据库专家可以编写数据库脚本，但不能直接推送"
+    },
+    "security-expert": {
+      "display_name": "安全专家",
+      "required_mcps": [
+        {
+          "name": "security-scanner",
+          "purpose": "安全漏洞扫描和审计",
+          "tools": ["scan-dependencies", "scan-code", "scan-secrets"],
+          "fallback_behavior": "error",
+          "instructions": "必须使用安全扫描工具进行全面审计"
+        }
+      ],
+      "optional_mcps": [
+        {
+          "name": "context7",
+          "purpose": "查询安全最佳实践",
+          "tools": ["query-docs"]
+        },
+        {
+          "name": "web-search-prime",
+          "purpose": "研究最新安全漏洞和修复方案",
+          "tools": ["webSearchPrime"]
+        },
+        {
+          "name": "web-reader",
+          "purpose": "阅读安全公告和漏洞报告",
+          "tools": ["webReader"]
+        }
+      ],
+      "forbidden_mcps": ["filesystem-write", "git-push"],
+      "notes": "安全专家只审计和报告，不应直接修改代码"
+    },
+    "devops-engineer": {
+      "display_name": "DevOps 工程师",
+      "required_mcps": [],
+      "optional_mcps": [
+        {
+          "name": "context7",
+          "purpose": "查询 DevOps 工具文档",
+          "tools": ["query-docs"]
+        },
+        {
+          "name": "web-search-prime",
+          "purpose": "研究 CI/CD 最佳实践",
+          "tools": ["webSearchPrime"]
+        },
+        {
+          "name": "web-reader",
+          "purpose": "阅读 DevOps 技术文章",
+          "tools": ["webReader"]
+        }
+      ],
+      "forbidden_mcps": [],
+      "notes": "DevOps 工程师需要配置部署环境和 CI/CD，拥有较高权限"
+    }
+  },
+  "global_settings": {
+    "strict_mode": true,
+    "fallback_behavior": "warning",
+    "audit_log": true,
+    "permission_levels": {
+      "read": [
+        "context7",
+        "web-search-prime",
+        "web-reader",
+        "4-5-v-mcp",
+        "zread"
+      ],
+      "write": [
+        "playwright",
+        "mastergo-mcp",
+        "zai-mcp-server"
+      ],
+      "admin": [
+        "security-scanner"
+      ]
+    },
+    "safety_rules": [
+      "禁止任何角色直接推送到主分支（DevOps 除外）",
+      "安全扫描失败时必须阻止部署",
+      "代码审查通过后才能合并",
+      "生产环境操作需要多角色确认",
+      "所有角色必须遵守 MCP 工具权限限制"
+    ],
+    "mcp_tool_registry": {
+      "playwright": {
+        "description": "浏览器自动化工具，用于 UI 测试、网页抓取和交互测试",
+        "category": "automation",
+        "website": "https://playwright.dev"
+      },
+      "context7": {
+        "description": "技术文档查询工具，支持多种编程语言和框架",
+        "category": "documentation",
+        "website": "https://context7.io"
+      },
+      "web-search-prime": {
+        "description": "网络搜索工具，用于查找最新信息和技术方案",
+        "category": "search",
+        "website": "https://search.brave.com"
+      },
+      "mastergo-mcp": {
+        "description": "MasterGo 设计工具集成，用于 UI/UX 设计和原型制作",
+        "category": "design",
+        "website": "https://mastergo.com"
+      },
+      "4-5-v-mcp": {
+        "description": "图像分析工具，用于视觉内容理解",
+        "category": "vision",
+        "website": "https://anthropic.com"
+      },
+      "web-reader": {
+        "description": "网页内容提取工具，支持 Markdown 格式输出",
+        "category": "scraping",
+        "website": "https://r.jina.ai"
+      },
+      "zread": {
+        "description": "GitHub 仓库阅读工具，用于代码审查和架构分析",
+        "category": "development",
+        "website": "https://github.com"
+      },
+      "zai-mcp-server": {
+        "description": "多功能图像分析服务器，支持 UI 转代码、OCR 等功能",
+        "category": "vision",
+        "website": "https://zai.mcp.server"
+      },
+      "security-scanner": {
+        "description": "安全漏洞扫描工具，用于代码审计和依赖检查",
+        "category": "security",
+        "website": "https://snyk.io"
+      }
+    }
+  }
+}
